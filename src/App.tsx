@@ -1,8 +1,9 @@
 import "./App.css";
+import { Machine } from "./components/Machine";
 import { Wrapper } from "./components/Wrapper";
 
 function App() {
-  return <Wrapper />;
+  return <Machine />;
 }
 
 export default App;

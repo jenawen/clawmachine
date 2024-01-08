@@ -5,12 +5,16 @@ export const Item = () => {
     { name: "1", item: "♡" },
     { name: "2", item: "☆" },
     { name: "3", item: "❀" },
+    { name: "4", item: "✧" },
   ];
 
   return (
     <>
-      {items.map((e) => (
-        <div className="item"> {e.item}</div>
+      {items.map((e: any, i: number) => (
+        <div className="item" key={i}>
+          {" "}
+          {e.item}
+        </div>
       ))}
     </>
   );

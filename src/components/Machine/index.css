@@ -1,3 +1,9 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+}
+
 .machine {
   display: flex;
   flex-direction: column;
@@ -8,6 +14,7 @@
   width: 500px;
   position: relative;
   margin: 10px;
+  overflow-x: none;
 }
 .top {
   /* position: relative; */
@@ -21,6 +28,15 @@
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
+}
+.claw {
+  height: 100px;
+  width: 10%;
+  border: 1px solid gray;
+  right: 0px;
+  left: 0px;
+  position: absolute;
+  transition: right linear 0.28s, left linear 0.28s;
 }
 
 .stuff {
