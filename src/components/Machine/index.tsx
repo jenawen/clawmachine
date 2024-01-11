@@ -31,11 +31,13 @@ export const Machine = () => {
 
   const grabItem = (e: any) => {
     setGrab(true);
-    let top = selected.offsetTop;
+    let top = selected?.offsetTop;
     if (grab) {
       selected.style.top = top + 80 + "px"; //moves down
       //use getboundingclientrect to check if divs touch ??
       //if true,
+
+      console.log(selected.getBoundingClientRect());
       setInterval(() => {
         selected.style.top = top - top + 30 + "px"; //moves up
       }, 800);
