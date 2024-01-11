@@ -11,7 +11,7 @@ export const Item = () => {
   return (
     <>
       {items.map((e: any, i: number) => (
-        <div className="item" key={i}>
+        <div className="item" id={`item-${i}`} key={i}>
           {" "}
           {e.item}
         </div>

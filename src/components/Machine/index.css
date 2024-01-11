@@ -35,8 +35,13 @@
   border: 1px solid gray;
   right: 0px;
   left: 0px;
+  top: 30px;
   position: absolute;
-  transition: right linear 0.28s, left linear 0.28s;
+  transition: all linear 0.28s, left linear 0.3s;
+}
+.claw:hover {
+  border: 1px solid pink;
+  transition: all ease 0.1s;
 }
 
 .stuff {

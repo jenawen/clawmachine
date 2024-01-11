@@ -5,6 +5,7 @@ import "./index.css";
 
 export const Machine = () => {
   const [grab, setGrab] = useState(false);
+  const [isGrabbed, setIsGrabbed] = useState(false);
   const claw = document.getElementById("claw");
   const [selected, setSelected] = useState<any>(claw);
 
@@ -29,11 +30,29 @@ export const Machine = () => {
   }, []);
 
   const grabItem = (e: any) => {
-    let top = claw?.offsetTop;
+    setGrab(true);
+    let top = selected.offsetTop;
     if (grab) {
-      // claw?.style.top = top + 200 + "px";
+      selected.style.top = top + 80 + "px"; //moves down
+      //use getboundingclientrect to check if divs touch ??
+      //if true,
+      setInterval(() => {
+        selected.style.top = top - top + 30 + "px"; //moves up
+      }, 800);
+
+      setIsGrabbed(true);
     }
   };
+
+  useEffect(() => {
+    if (isGrabbed) {
+      setInterval(() => {
+        let left = selected.offsetLeft;
+        selected.style.left = left - left + 20 + "px";
+        setIsGrabbed(false);
+      }, 1100);
+    }
+  }, [isGrabbed]);
 
   return (
     <div className="wrapper">
